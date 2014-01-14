@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <title>{% block title %}Frank's Blog{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/ghostwriter-master/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/static/ghostwriter-master/assets/css/nprogress.css" />
+    <link rel="stylesheet" type="text/css" href="/static/ghostwriter-master/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic" />
+
+</head>
+<body>
+{#    <script type="text/javascript" src="/static/ghostwriter-master/assets/js/jquery.history.js"></script>#}
+{#    <script type="text/javascript" src="/static/ghostwriter-master/assets/js/nprogress.js"></script>#}
+{#    <script type="text/javascript" src="/static/ghostwriter-master/assets/js/scripts.js"></script>#}
+
+{#    <div id="sidebar">{% block sidebar %}{% endblock %}</div>#}
+    <div id="container" class="site-header">
+        <div id="menu" class="site-title-wrapper">
+            {% block nav-global %}
+                <!--menu-->
+                 <h1 class="site-title"><a title="Frank's Blog" href="/">Frank's Blog</a></h1>
+
+                 <h1 class="site-title"><a title="新增文章" href="/">+文章</a></h1>
+
+                 <h1 class="site-title"><a title="管理页面" href="/">管理员</a></h1>
+{#                 <a class="button-square" href="/"><span class="icon icon-menu"></span></a>#}
+{##}
+{#                 <a class="button-square" href="/"><span class="icon icon-rss"></span></a>#}
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

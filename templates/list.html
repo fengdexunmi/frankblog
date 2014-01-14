@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <!--文章-->
+        <ol class="post-list">
+            {% for post in posts.object_list %}
+                <li class="post-stub">
+                    <a href="{{ post.get_post_url }}">
+                        <h4 class="post-stub-title">{{ post.title }}--</h4>
+                        {{ post.create_time }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ol>
+
+        <!--上一页和下一页链接-->
+        {% if posts.object_list and posts.paginator.num_pages > 1 %}
+            <div class="post-navigation">
+                <span class="step-links">
+                    {% if posts.has_previous %}
+                        <a href="?page={{ posts.previous_page_number }}">上一页&lt;</a>
+                    {% endif %}
+                    <span class="current">
+                        &nbsp;Page{{ posts.number }} of {{ posts.paginator.num_pages }}
+                    </span>
+
+                    {% if posts.has_next %}
+                        <a href="?page={{ posts.next_page_number }}">&gt;下一页</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
