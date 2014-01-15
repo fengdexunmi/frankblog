@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
+{% block nav-global %}
+    <h1>Frank's Blog</h1>
+    <p>2014-01-15</p>
+{% endblock %}
 {% block content %}
-    <div class="container">
         <!--文章-->
         <ol class="post-list">
             {% for post in posts.object_list %}
@@ -31,6 +34,5 @@
                 </span>
             </div>
         {% endif %}
-    </div>
 {% endblock %}
 

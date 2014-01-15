@@ -10,29 +10,24 @@
 
 </head>
 <body>
-{#    <script type="text/javascript" src="/static/ghostwriter-master/assets/js/jquery.history.js"></script>#}
-{#    <script type="text/javascript" src="/static/ghostwriter-master/assets/js/nprogress.js"></script>#}
-{#    <script type="text/javascript" src="/static/ghostwriter-master/assets/js/scripts.js"></script>#}
-
-{#    <div id="sidebar">{% block sidebar %}{% endblock %}</div>#}
     <div id="container" class="site-header">
         <div id="menu" class="site-title-wrapper">
-            {% block nav-global %}
+
                 <!--menu-->
                  <h1 class="site-title"><a title="Frank's Blog" href="/">Frank's Blog</a></h1>
 
-                 <h1 class="site-title"><a title="新增文章" href="/">+文章</a></h1>
+                 <h1 class="site-title"><a title="新增文章" href="/admin/blog/post/add">+文章</a></h1>
 
-                 <h1 class="site-title"><a title="管理页面" href="/">管理员</a></h1>
-{#                 <a class="button-square" href="/"><span class="icon icon-menu"></span></a>#}
-{##}
-{#                 <a class="button-square" href="/"><span class="icon icon-rss"></span></a>#}
-            {% endblock %}
+                 <h1 class="site-title"><a title="管理页面" href="/admin">管理员</a></h1>
         </div>
 
-        <div id="content">
-            {% block content %}{% endblock %}
+        <div class="container">
+            {% block nav-global %}{% endblock %}
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div>
         </div>
+
     </div>
     <div id="footer"></div>
 </body>

@@ -1,3 +1,5 @@
+#coding=utf8
+
 from django.conf.urls import patterns, include, url
 from blog import views
 
@@ -11,5 +13,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     (r"^$", views.main),
+    (r'^post/(?P<pid>\d+)/', views.show_post),  # 根据文章链接显示文章
 
 )

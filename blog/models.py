@@ -16,7 +16,7 @@ class Post(models.Model):
         return self.title
 
     def get_post_url(self):
-        return '/%s' % self.slug
+        return 'post/%s/%s' % (self.id, self.slug)
 
     class Meta:
         verbose_name_plural = '文章'
