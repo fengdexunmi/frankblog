@@ -7,4 +7,5 @@ This is a personal blog based on django.
 Version 0.1：
   1. 首页显示博客的标题和创建时间
   2. 实现分页
+  3. 单页面显示文章
 
