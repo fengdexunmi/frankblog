@@ -3,13 +3,16 @@
 {% block nav-global %}
     <h1>Frank's Blog</h1>
     <p>2014-01-15</p>
+    {% if tag %}
+        <h4>与标签“{{ tag }}”相关的文章如下：</h4>
+    {% endif %}
 {% endblock %}
 {% block content %}
         <!--文章-->
         <ol class="post-list">
             {% for post in posts.object_list %}
                 <li class="post-stub">
-                    <a href="{{ post.get_post_url }}">
+                    <a href="../../{{ post.get_absolute_url }}">
                         <h4 class="post-stub-title">{{ post.title }}--</h4>
                         {{ post.create_time }}
                     </a>

@@ -5,6 +5,11 @@
 
         <h1>{{ post.title }}</h1>
         <p>{{ post.create_time }}</p>
+        {% if tags %}
+            {% for tag in tags %}
+                <a href={{ tag.get_tag_url }}>{{ tag.name }}</a>
+            {% endfor %}
+        {% endif %}
 
 {% endblock %}
 
