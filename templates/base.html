@@ -1,34 +1,80 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <title>{% block title %}Frank's Blog{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="/static/ghostwriter-master/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/static/ghostwriter-master/assets/css/nprogress.css" />
-    <link rel="stylesheet" type="text/css" href="/static/ghostwriter-master/assets/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic" />
-
-</head>
-<body>
-    <div id="container" class="site-header">
-        <div id="menu" class="site-title-wrapper">
-
-                <!--menu-->
-                 <h1 class="site-title"><a title="Frank's Blog" href="/">Frank's Blog</a></h1>
-
-                 <h1 class="site-title"><a title="新增文章" href="/admin/blog/post/add">+文章</a></h1>
-
-                 <h1 class="site-title"><a title="管理页面" href="/admin">管理员</a></h1>
+<html style="" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Frank's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+    rel="stylesheet" type="text/css">
+{#    <link href="/static/css/bootstrap-lumen.min.css" rel="stylesheet" type="text/css">#}
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+  <div class="container">
+{#    <div class="row">#}
+{#        <div class="col-md-1"></div>#}
+{#        <div class="col-md-8">#}
+{#            <blockquote>#}
+{#                <p>"Stay hungry, Stay foolish."(做个吃货,做个2B)</p>#}
+{#                <small>by Steve Jobs</small>#}
+{#            </blockquote>#}
+{#        </div>#}
+{#    </div>#}
+    <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="/">Frank's Blog</a>
         </div>
 
-        <div class="container">
-            {% block nav-global %}{% endblock %}
-            <div id="content">
-                {% block content %}{% endblock %}
+         <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">主页</a></li>
+                <li><a href="/Coding">Coding</a></li>
+                <li><a href="/Living">Living</a></li>
+            </ul>
+         </div>
+    </nav>
+    </div>
+    </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+        {% block selected_tag %} {% endblock %}
+        {% block selected_category %} {% endblock %}
+        {% block post-list%} {% endblock%}
+        {% block pager %} {% endblock %}
+        {% block comments %} {% endblock %}
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+            <div class="panel-body">
+                <p><h4>关于</h4></p>
+                <strong>Email:&nbsp;</strong>fengdexunmi@126.com<br>
+                <Strong>Github:&nbsp;</Strong>
+                <a href="https://github.com/fengdexunmi">fengdexunmi</a>
+                <hr>
+                <p><h4>分类</h4></p>
+                <p>{% block sidebar-category %} {% endblock %}</p>
+                <hr>
+                <p><h4>标签</h4></p>
+                <p>{% block sidebar-tags %} {% endblock %}</p>
+            </div>
             </div>
         </div>
-
+      </div>
     </div>
-    <div id="footer"></div>
-</body>
+
+  {% block myscript %}
+  {% endblock %}
+  </body>
+
 </html>

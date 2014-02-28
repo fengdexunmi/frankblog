@@ -25,7 +25,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
-    '/home/frank/PycharmProjects/frankblog/templates',
+     os.path.join(BASE_DIR, 'templates'),
 )
 
 ALLOWED_HOSTS = []
@@ -42,6 +42,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'blog',
+    'writingfield',
+    # 'django.contrib.comments',  # add by frank at 2014.2.6
+    # 'django.contrib.sites',  # add by frank at 2014.2.6
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,6 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'writingfield.middleware.WritingFieldMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -64,9 +68,9 @@ WSGI_APPLICATION = 'frankblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'frankblogDB',
-        'USER': 'frank',
-        'PASSWORD': '123654',
+        'NAME': '',  # your db name
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '',
 
@@ -95,3 +99,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+
